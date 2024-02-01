@@ -55,6 +55,7 @@
     <button class="btn" onclick="setDefaultValues()">Default Semester 5</button>
     <button class="btn" onclick="addInput()">Add Input</button>
     <button class="btn" onclick="calculate()">Calculate SGPA</button>    
+    <div id="result"></div>
     <div class="input-container">
         <label for="credits1">Credits:</label>
         <select class="credits" id="credits1">
@@ -172,7 +173,6 @@
         <input type="text" class="gradeInput" id="gradeInput9" placeholder="Enter grade">
         <button class="btn" onclick="removeInput(this)">Remove</button>
     </div>
-<div id="result"></div>
 
 <script>
 var inputCount = 5; // Set default number of inputs to 5
