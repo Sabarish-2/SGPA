@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SGPA Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .input-container {
+        margin-bottom: 10px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    select {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 120px;
+        margin-top: 5px;
+    }
+    .btn {
+        padding: 8px 15px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+    }
+    .btn:hover {
+        background-color: #45a049;
+    }
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<h1>SGPA Calculator</h1>
+<div id="inputFields">
+    <!-- Default 5 sets of input fields -->
+    <button class="btn" onclick="setDefaultValues()">Default Semester 5</button>
+
+    <div class="input-container">
+        <label for="credits1">Credits:</label>
+        <select class="credits" id="credits1">
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label id="gradeLabel1" for="gradeInput1">Grade:</label>
+        <input type="text" class="gradeInput" id="gradeInput1" placeholder="Enter grade">
+        <button class="btn" onclick="removeInput(this)">Remove</button>
+    </div>
+    <div class="input-container">
+        <label for="credits2">Credits:</label>
+        <select class="credits" id="credits2">
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label id="gradeLabel2" for="gradeInput2">Grade:</label>
+        <input type="text" class="gradeInput" id="gradeInput2" placeholder="Enter grade">
+        <button class="btn" onclick="removeInput(this)">Remove</button>
+    </div>
+    <div class="input-container">
+        <label for="credits3">Credits:</label>
+        <select class="credits" id="credits3">
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label id="gradeLabel3" for="gradeInput3">Grade:</label>
+        <input type="text" class="gradeInput" id="gradeInput3" placeholder="Enter grade">
+        <button class="btn" onclick="removeInput(this)">Remove</button>
+    </div>
+    <div class="input-container">
+        <label for="credits4">Credits:</label>
+        <select class="credits" id="credits4">
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label id="gradeLabel4" for="gradeInput4">Grade:</label>
+        <input type="text" class="gradeInput" id="gradeInput4" placeholder="Enter grade">
+        <button class="btn" onclick="removeInput(this)">Remove</button>
+    </div>
+    <div class="input-container">
+        <label for="credits5">Credits:</label>
+        <select class="credits" id="credits5">
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label id="gradeLabel5" for="gradeInput5">Grade:</label>
+        <input type="text" class="gradeInput" id="gradeInput5" placeholder="Enter grade">
+        <button class="btn" onclick="removeInput(this)">Remove</button>
+    </div>
+    <div class="input-container">
+        <label for="credits6">Credits:</label>
+        <select class="credits" id="credits6">
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label id="gradeLabel6" for="gradeInput6">Grade:</label>
+        <input type="text" class="gradeInput" id="gradeInput6" placeholder="Enter grade">
+        <button class="btn" onclick="removeInput(this)">Remove</button>
+    </div>
+    <div class="input-container">
+        <label for="credits7">Credits:</label>
+        <select class="credits" id="credits7">
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label id="gradeLabel7" for="gradeInput7">Grade:</label>
+        <input type="text" class="gradeInput" id="gradeInput7" placeholder="Enter grade">
+        <button class="btn" onclick="removeInput(this)">Remove</button>
+    </div>
+    <div class="input-container">
+        <label for="credits8">Credits:</label>
+        <select class="credits" id="credits8">
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label id="gradeLabel8" for="gradeInput8">Grade:</label>
+        <input type="text" class="gradeInput" id="gradeInput8" placeholder="Enter grade">
+        <button class="btn" onclick="removeInput(this)">Remove</button>
+    </div>
+    <div class="input-container">
+        <label for="credits9">Credits:</label>
+        <select class="credits" id="credits9">
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label id="gradeLabel9" for="gradeInput9">Grade:</label>
+        <input type="text" class="gradeInput" id="gradeInput9" placeholder="Enter grade">
+        <button class="btn" onclick="removeInput(this)">Remove</button>
+    </div>
+<button class="btn" onclick="addInput()">Add Input</button>
+<button class="btn" onclick="calculate()">Calculate SGPA</button>
+<div id="result"></div>
+
+<script>
+var inputCount = 5; // Set default number of inputs to 5
+var gradeMap = {
+    'S': 10,
+    's': 10,
+    'A': 9,
+    'a': 9,
+    'B': 8,
+    'b': 8,
+    'C': 7,
+    'c': 7,
+    'D': 6,
+    'd': 6,
+    'E': 5,
+    'e': 5
+};
+
+function addInput() {
+    inputCount++;
+    var inputContainer = document.createElement('div');
+    inputContainer.className = 'input-container';
+    inputContainer.innerHTML = `
+        <label for="credits${inputCount}">Credits:</label>
+        <select class="credits" id="credits${inputCount}">
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label for="gradeInput${inputCount}">Grade:</label>
+        <input type="text" class="gradeInput" id="gradeInput${inputCount}" placeholder="Enter grade">
+        <button class="btn" onclick="removeInput(this)">Remove</button>
+    `;
+    document.getElementById('inputFields').appendChild(inputContainer);
+}
+
+function setDefaultValues() {
+        document.getElementById("credits1").value = "4";
+        document.getElementById("gradeLabel1").textContent = "Grade of MAA4302";
+        document.getElementById("credits2").value = "3";
+        document.getElementById("gradeLabel2").textContent = "Grade of CSB4301";
+        document.getElementById("credits3").value = "4";
+        document.getElementById("gradeLabel3").textContent = "Grade of CSB4302";
+        document.getElementById("credits4").value = "3";
+        document.getElementById("gradeLabel4").textContent = "Grade of CSB4303";
+        document.getElementById("credits5").value = "2";
+        document.getElementById("gradeLabel5").textContent = "Grade of GEA4216";
+        document.getElementById("credits6").value = "3";
+        document.getElementById("gradeLabel6").textContent = "Grade of ---DE---";
+        document.getElementById("credits7").value = "2";
+        document.getElementById("gradeLabel7").textContent = "Grade of ---NE---";
+        document.getElementById("credits8").value = "1";
+        document.getElementById("gradeLabel8").textContent = "Grade of CSB4331";
+        document.getElementById("credits9").value = "1";
+        document.getElementById("gradeLabel9").textContent = "Grade of CSB4332";
+    }
+
+function removeInput(btn) {
+    btn.parentNode.remove();
+    inputCount--;
+}
+
+function calculate() {
+    var totalCredits = 0;
+    var totalScore = 0;
+    var inputs = document.getElementsByClassName('input-container');
+    for (var i = 0; i < inputs.length; i++) {
+        var credits = parseFloat(inputs[i].querySelector('.credits').value);
+        var gradeOrNumber = inputs[i].querySelector('.gradeInput').value;
+        var grade = gradeOrNumber in gradeMap ? gradeMap[gradeOrNumber] : parseFloat(gradeOrNumber);
+        var score = credits * grade;
+        totalCredits += credits;
+        totalScore += score;
+    }
+    var sgpa = totalScore / totalCredits;
+    document.getElementById('result').innerHTML = "Total Credits: " + totalCredits.toFixed(4) + "<br>SGPA: " + sgpa.toFixed(4);
+}
+</script>
+</body>
+</html>
