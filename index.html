@@ -27,10 +27,9 @@
         padding: 8px;
         border: 1px solid #ccc;
         border-radius: 5px;
-        width: 8ch;
+        width: 2em; /* modified width */
         margin-top: 5px;
     }
-    /* width: 120px; */
     .btn {
         padding: 8px 15px;
         background-color: #4CAF50;
@@ -69,7 +68,8 @@
         </select>
         <label id="gradeLabel1" for="gradeInput1">Grade:</label>
         <input type="text" class="gradeInput" id="gradeInput1" placeholder="Enter grade">
-        <i class="fas fa-trash-alt" onclick="removeInput(this)"></i>
+        <button class="btn" onclick="removeInput(this)">Remove</button>
+    </div>
     <div class="input-container">
         <label for="credits2">Credits:</label>
         <select class="credits" id="credits2">
