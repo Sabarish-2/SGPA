@@ -52,7 +52,8 @@
 <h1>SGPA Calculator</h1>
 <div id="inputFields">
     <!-- Default 5 sets of input fields -->
-    <button class="btn" onclick="setDefaultValues()">Default Semester 5</button>
+    <button class="btn" onclick="setDefaultValues5()">Semester 5</button>
+    <button class="btn" onclick="setDefaultValues6()">Semester 6</button>
     <button class="btn" onclick="addInput()">Add Input</button>
     <button class="btn" onclick="calculate()">Calculate SGPA</button>    
     <div id="result"></div>
@@ -211,7 +212,30 @@ function addInput() {
     document.getElementById('inputFields').appendChild(inputContainer);
 }
 
-function setDefaultValues() {
+function setDefaultValues6() {
+        document.getElementById("credits1").value = "4";
+        document.getElementById("gradeLabel1").textContent = "Grade of CSB4316";
+        document.getElementById("credits2").value = "4";
+        document.getElementById("gradeLabel2").textContent = "Grade of CSB4317";
+        document.getElementById("credits3").value = "3";
+        document.getElementById("gradeLabel3").textContent = "Grade of CSB4318";
+        document.getElementById("credits4").value = "4";
+        document.getElementById("gradeLabel4").textContent = "Grade of CSB4319";
+        document.getElementById("credits5").value = "2";
+        document.getElementById("gradeLabel5").textContent = "Grade of GEA4304";
+        document.getElementById("credits6").value = "3";
+        document.getElementById("gradeLabel6").textContent = "Grade of ---DE---";
+        document.getElementById("credits7").value = "2";
+        document.getElementById("gradeLabel7").textContent = "Grade of ---NE---";
+        document.getElementById("credits8").value = "1";
+        document.getElementById("gradeLabel8").textContent = "Grade of CSB4341 - 1/2";
+        document.getElementById("credits9").value = "1";
+        document.getElementById("gradeLabel9").textContent = "Grade of CSB4342";
+        document.getElementById("credits10").value = "1";
+        document.getElementById("gradeLabel10").textContent = "Grade of CSB4343";
+    }
+
+function setDefaultValues5() {
         document.getElementById("credits1").value = "4";
         document.getElementById("gradeLabel1").textContent = "Grade of MAA4302";
         document.getElementById("credits2").value = "3";
